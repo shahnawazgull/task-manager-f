@@ -4,6 +4,8 @@ import { taskService } from "./services/task.service"
 import TaskForm from "./components/TaskForm"
 import TaskCard from "./components/TaskCard"
 import DeleteModal from "./components/DeleteModal"
+import WeatherWidget from "./components/WeatherWidget"
+
 
 const FILTERS = ["all", "active", "completed"]
 
@@ -106,6 +108,7 @@ export default function App() {
       </header>
 
       <main className="max-w-2xl mx-auto px-4 py-6 space-y-5">
+        <WeatherWidget />
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3">
           {[
