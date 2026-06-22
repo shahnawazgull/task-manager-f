@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeSlide { animation: fadeSlide 0.2s ease; }
+.animate-scaleIn   { animation: scaleIn  0.2s ease; }
