@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { weatherService } from "../services/weather.service"
 
+const CITY_NAME_REGEX = /^[A-Za-z\s'.-]+$/
+
 export default function WeatherWidget() {
   const [city, setCity]       = useState("Karachi")
   const [input, setInput]     = useState("Karachi")
@@ -27,7 +29,19 @@ export default function WeatherWidget() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (input.trim()) fetchWeather(input.trim())
+    const trimmed = input.trim()
+
+    if (!trimmed) {
+      toast.error("Please enter a city name")
+      return
+    }
+
+    if (!CITY_NAME_REGEX.test(trimmed)) {
+      toast.error("City name can only contain letters, spaces, and hyphens")
+      return
+    }
+
+    fetchWeather(trimmed)
   }
 
   return (
