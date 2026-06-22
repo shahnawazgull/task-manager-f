@@ -1,16 +1,70 @@
-# React + Vite
+# Task Manager — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive task management app built with React, Tailwind CSS, and Vite. Includes a live weather widget powered by the OpenWeatherMap API.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://task-manager-f-delta.vercel.app/
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS v4
+- react-toastify (notifications)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Add, edit, delete, and mark tasks as completed
+- Filter tasks by All / Active / Completed
+- Live progress tracker showing completion percentage
+- Weather widget with city search and input validation
+- Toast notifications for all actions
+
+
+## Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/shahnawazgull/task-manager-f
+cd task-manager-f
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+
+The app will run on `http://localhost:5173` by default.
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+## Backend Connection
+
+This frontend connects to the deployed backend at:
+
+```
+https://task-manager-b-uaf0.onrender.com
+```
+
+This is set directly inside `services/task.service.js` and `services/weather.service.js`.
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com).
+
+- **Framework Preset:** Vite
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
